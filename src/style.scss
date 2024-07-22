@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&family=Playwrite+BE+VLG:wght@100..400&display=swap');
+
+body {
+    margin: 0;
+}
+
+.formContainer {
+    background-color: rgb(99, 163, 203);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+
+    .formWrapper {
+        background-color: white;
+        min-width: 300px;
+        padding: 20px 60px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    
+        .logo {
+            color: rgb(99, 163, 203);
+            font-size: 24px;
+            font-family: "Playwrite AR", cursive;
+            font-weight: bold;
+        }
+
+        .title{
+            color: rgb(99, 163, 203);
+            font-weight: 300;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+    
+            input{
+                padding: 15px;
+                border: solid;
+                min-width: 250px;
+                border-width: 2px;
+                border-radius: 25px;
+                border-color: rgba(82, 93, 100, 0.158);
+                transition: box-shadow 0.5s, transform 0.5s;
+                &::placeholder{
+                    color: rgb(135, 135, 135);
+                }
+            }
+
+            input:hover{
+                transform: scale(1.04);
+                box-shadow: 5px 5px 5px rgba(82, 181, 242, 0.25);
+            }
+        }
+         
+        label{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #63a3cb;
+            font-size: 12px;
+            cursor: pointer;
+            img{
+                width:25px;
+            }
+        }
+
+        button{
+            background-color: #63a3cb;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        }
+
+        p{
+            color: #63a3cb;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    }
+
+
