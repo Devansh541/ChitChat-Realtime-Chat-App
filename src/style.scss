@@ -90,3 +90,114 @@ body {
     }
 
 
+.home{
+    background-color: #63a3cb;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container{
+        border: 1px solid white;
+        border-radius: 15px;
+        width: 65%;
+        height: 80%;
+        display: flex;
+        overflow: hidden;
+        
+        .sidebar{
+            flex: 1;
+            background-color: #3c647d;
+
+            .navbar{
+                display: flex;
+                align-items: center;
+                background-color: #26485e;
+                height: 50px;
+                padding: 10px;
+                justify-content: space-between;
+                color: white;
+
+                .logo{
+                    font-family: "Playwrite AR", cursive;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+
+                .user{
+                    display: flex;
+                    gap: 10px;
+                    font-size: 20px;
+                    
+                    img{
+                        background-color: white;
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    button{
+                        background-color: #3c647d;
+                        color: white;
+                        font-size: 12px;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .search{
+                border-bottom: 1px solid gray;
+
+                .searchForm{
+                    padding: 10px;
+                    input{
+                        background-color: transparent;
+                        border: none;
+                        color: white;
+                        outline: none;
+
+                        &::placeholder{
+                            color: whitesmoke;
+                        }
+                    }
+                }
+            }
+
+            .userChat{
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: white;
+                cursor: pointer;
+
+                &:hover{
+                        background-color: #26485e;
+                }
+
+                img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50px;
+                    object-fit: cover;
+                }
+
+                .userChatInfo{
+                    span{
+                        font-size: 18px;
+                        font-weight: 500;
+                    }
+                    p{
+                        font-size: 14px;
+                        color: lightgray;
+                    }
+                }
+            }
+        }
+        .chat{
+            flex: 2;
+        }
+    }
+}
