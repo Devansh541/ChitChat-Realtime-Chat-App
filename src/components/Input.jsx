@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import Img from "../img/img.png";
 import Attach from "../img/attach.png";
+import Send from "../img/send.png";
+import Emoji from "../img/emoji.png";
+import EmojiPicker from "emoji-picker-react";
 import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 import {
@@ -15,6 +18,12 @@ import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 const Input = () => {
+  const [open, setOpen] = useState(false);
+  const handleEmoji = (e) => {
+    setText((prev) => prev + e.emoji);
+    setOpen(false);
+  };
+
   const [text, setText] = useState("");
   const [img, setImg] = useState(null);
 
@@ -82,7 +91,16 @@ const Input = () => {
         value={text}
       />
       <div className="send">
-        <img src={Attach} alt="" />
+        <div className="emoji">
+          <img
+            src={Emoji}
+            className="emoji"
+            onClick={() => setOpen((prev) => !prev)}
+          />
+          <div className="emojipicker">
+            <EmojiPicker open={open} onEmojiClick={handleEmoji} />
+          </div>
+        </div>
         <input
           type="file"
           style={{ display: "none" }}
@@ -92,7 +110,9 @@ const Input = () => {
         <label htmlFor="file">
           <img src={Img} alt="" />
         </label>
-        <button onClick={handleSend}>Send</button>
+        <button onClick={handleSend}>
+          <img src={Send} alt="" />
+        </button>
       </div>
     </div>
   );
